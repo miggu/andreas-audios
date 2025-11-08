@@ -24,7 +24,6 @@ function App() {
       const params = {
         audio: file,
         language_detection: true,
-        expected_languages: ["en", "es"],
         speech_model: "universal",
       };
       const result = await client.transcripts.transcribe(params);
