@@ -12,7 +12,6 @@ const client = new AssemblyAI({
 function App() {
   const [transcript, setTranscript] = useState("");
   const [loading, setLoading] = useState(false);
-  console.log(KEY);
 
   const handleFileChange = async (e) => {
     const file = e.target.files?.[0];
@@ -34,7 +33,6 @@ function App() {
       setTranscript(
         result.text || "Transcript created. Poll for updates or use webhooks."
       );
-      console.log(result);
     } catch (err) {
       console.error(err);
       setTranscript("Error: " + (err?.message || String(err)));
@@ -46,9 +44,7 @@ function App() {
   return (
     <>
       <div>
-        <a href="https://react.dev" target="_blank">
-          <img src={andreaLogo} className="logo" alt="Andrea logo" />
-        </a>
+        <img src={andreaLogo} className="logo" alt="Andrea logo" />
       </div>
       <h1>Andrea's Audios</h1>
       <div className="card">
